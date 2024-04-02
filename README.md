@@ -12,6 +12,7 @@ All the documentation files can be found in `src`. It contains the English markd
 - [`ja`](https://github.com/vuejs/v3-migration-guide/tree/main/packages/docs/ja): Japanese translation.
 - [`pt`](https://github.com/vuejs/v3-migration-guide/tree/main/packages/docs/pt): Portuguese translation.
 - [`uk`](https://github.com/vuejs/v3-migration-guide/tree/main/packages/docs/uk): Ukrainian translation.
+- [`ru`](https://github.com/vuejs/v3-migration-guide/tree/main/packages/docs/ru): Russian translation.
 
 Besides that, the `.vitepress` sub-folder contains the config and theme, including the i18n information.
 

@@ -1,5 +1,5 @@
 import { defineConfig } from 'vitepress'
-import { en, zh, ja, uk, pt } from "./locales"
+import { en, zh, ja, uk, pt, ru } from "./locales"
 
 export default defineConfig({
   srcDir: 'src',
@@ -9,5 +9,6 @@ export default defineConfig({
     ja: { label: '日本語', lang: 'ja-JP', link: '/ja/', ...ja },
     uk: { label: 'Українська', lang: 'uk', link: '/uk/', ...uk },
     pt: { label: 'Português', lang: 'pt-BR', link: '/pt/', ...pt },
+    ru: { label: 'Русский', lang: 'ru-RU', link: '/ru/', ...ru },
   }
 })
