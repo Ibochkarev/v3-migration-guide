@@ -31,7 +31,13 @@ const localeBadges = {
     breaking: 'rutura',
     removed: 'removido',
     updated: 'atualizado'
-  }
+  },
+  'ru-RU': {
+    new: 'новый',
+    breaking: 'несовместимый',
+    removed: 'удалён',
+    updated: 'изменённый'
+  },
 }
 
 export default {
