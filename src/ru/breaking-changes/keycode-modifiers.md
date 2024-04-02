@@ -9,8 +9,8 @@ badges:
 
 Here is a quick summary of what has changed:
 
-- **BREAKING**: Using numbers, i.e. keyCodes, as `v-on` modifiers is no longer supported
-- **BREAKING**: `config.keyCodes` is no longer supported
+- **КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ**: Using numbers, i.e. keyCodes, as `v-on` modifiers is no longer supported
+- **КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ**: `config.keyCodes` is no longer supported
 
 ## 2.x Синтаксис
 

@@ -17,15 +17,15 @@ import VueMasteryWidget from './VueMastery.vue'
 
 Среди новых возможностей Vue 3 можно отметить следующие:
 
-- [Composition API](https://vuejs.org/guide/extras/composition-api-faq.html)<span class="note">\*</span>
-- [SFC Composition API Syntax Sugar (`<script setup>`)](https://vuejs.org/api/sfc-script-setup.html)<span class="note">\*</span>
-- [Teleport](https://vuejs.org/guide/built-ins/teleport.html)
+- [Composition API](https://ru.vuejs.org/guide/extras/composition-api-faq.html)<span class="note">\*</span>
+- [SFC Composition API Syntax Sugar (`<script setup>`)](https://ru.vuejs.org/api/sfc-script-setup.html)<span class="note">\*</span>
+- [Teleport](https://ru.vuejs.org/guide/built-ins/teleport.html)
 - [Fragments](./new/fragments.html)
-- [Emits Component Option](https://vuejs.org/api/options-state.html#emits)<span class="note">\*\*</span>
-- [`createRenderer` API from `@vue/runtime-core`](https://vuejs.org/api/custom-renderer.html) для создания пользовательских рендеров
-- [SFC State-driven CSS Variables (`v-bind` in `<style>`)](https://vuejs.org/api/sfc-css-features.html#v-bind-in-css)<span class="note">\*</span>
+- [Emits Component Option](https://ru.vuejs.org/api/options-state.html#emits)<span class="note">\*\*</span>
+- [`createRenderer` API from `@vue/runtime-core`](https://ru.vuejs.org/api/custom-renderer.html) для создания пользовательских рендеров
+- [SFC State-driven CSS Variables (`v-bind` in `<style>`)](https://ru.vuejs.org/api/sfc-css-features.html#v-bind-in-css)<span class="note">\*</span>
 - [SFC `<style scoped>` теперь можно включать глобальные правила или правила, направленные только на содержимое слотов](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0023-scoped-styles-changes.md)
-- [Suspense](https://vuejs.org/guide/built-ins/suspense.html) <sup class="warning">экспериментальный</sup>
+- [Suspense](https://ru.vuejs.org/guide/built-ins/suspense.html) <sup class="warning">экспериментальный</sup>
 
 <sub class="note"><b>\*</b> Теперь также поддерживается в <a href="https://blog.vuejs.org/posts/vue-2-7-naruto.html" target="_blank">Vue 2.7</a></sub><br>
 <sub class="note"><b>\*\*</b> Поддерживается в Vue 2.7, но только для вывода типов</sub>

@@ -1,5 +1,5 @@
 ---
-title: v-if vs. v-for Precedence
+title: v-if против v-for Приоритет.
 badges:
   - breaking
 ---
@@ -8,29 +8,29 @@ badges:
 
 ## Обзор
 
-- **BREAKING**: If used on the same element, `v-if` will have higher precedence than `v-for`
+- **КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ**: Если `v-if` используется в одном и том же элементе, то `v-for` будет иметь более высокий приоритет.
 
 ## Введение
 
-Two of the most commonly used directives in Vue.js are `v-if` and `v-for`. So it's no surprise that there comes a time when developers want to use both together. While this is not a recommended practice, there may be times when this is necessary, so we wanted to provide guidance for how it works.
+Две наиболее часто используемые директивы в Vue.js - это `v-if` и `v-for`. Поэтому неудивительно, что наступает момент, когда разработчики хотят использовать обе директивы вместе. Хотя это и не рекомендуется делать, бывают случаи, когда это необходимо, поэтому мы хотели бы предоставить руководство по тому, как это работает.
 
 ## 2.x Синтаксис
 
-In 2.x, when using `v-if` and `v-for` on the same element, `v-for` would take precedence.
+В 2.x при использовании `v-if` и `v-for` для одного и того же элемента приоритет отдавался `v-for`.
 
 ## 3.x Синтаксис
 
-In 3.x, `v-if` will always have the higher precedence than `v-for`.
+В 3.x `v-if` всегда будет иметь больший приоритет, чем `v-for`.
 
 ## Стратегия миграции
 
-It is recommended to avoid using both on the same element due to the syntax ambiguity.
+Рекомендуется избегать использования обоих свойств в одном элементе из-за неоднозначности синтаксиса.
 
-Rather than managing this at the template level, one method for accomplishing this is to create a computed property that filters out a list for the visible elements.
+Вместо того чтобы управлять этим на уровне шаблона, можно создать вычисляемое свойство, которое отфильтрует список видимых элементов.
 
 [Флаг миграционной сборки: `COMPILER_V_IF_V_FOR_PRECEDENCE`](../migration-build.html#compat-configuration)
 
 ## См. также
 
-- [List Rendering - Displaying Filtered/Sorted Results](https://vuejs.org/guide/essentials/list.html#displaying-filtered-sorted-results)
-- [List Rendering - `v-for` with `v-if`](https://vuejs.org/guide/essentials/list.html#v-for-with-v-if)
+- [Рендеринг списка - отображение отфильтрованных/отсортированных результатов](https://ru.vuejs.org/guide/essentials/list.html#displaying-filtered-sorted-results)
+- [Рендеринг списков - `v-for` с `v-if`](https://ru.vuejs.org/guide/essentials/list.html#v-for-with-v-if)

@@ -8,9 +8,9 @@ badges:
 
 ## Обзор
 
-- **BREAKING**: `data` component option declaration no longer accepts a plain JavaScript `object` and expects a `function` declaration.
+- **КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ**: `data` component option declaration no longer accepts a plain JavaScript `object` and expects a `function` declaration.
 
-- **BREAKING**: when merging multiple `data` return values from mixins or extends, the merge is now shallow instead of deep (only root-level properties are merged).
+- **КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ**: when merging multiple `data` return values from mixins or extends, the merge is now shallow instead of deep (only root-level properties are merged).
 
 ## 2.x Синтаксис
 

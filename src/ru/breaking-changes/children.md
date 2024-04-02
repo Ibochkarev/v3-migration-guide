@@ -37,7 +37,7 @@ export default {
 
 ## 3.x Обновление
 
-В версии 3.x свойство `$children` удалено и больше не поддерживается. Вместо этого, если вам нужно получить доступ к экземпляру дочернего компонента, мы рекомендуем использовать [template refs](https://vuejs.org/guide/essentials/template-refs.html#template-refs).
+В версии 3.x свойство `$children` удалено и больше не поддерживается. Вместо этого, если вам нужно получить доступ к экземпляру дочернего компонента, мы рекомендуем использовать [template refs](https://ru.vuejs.org/guide/essentials/template-refs.html#template-refs).
 
 ## Стратегия миграции
 

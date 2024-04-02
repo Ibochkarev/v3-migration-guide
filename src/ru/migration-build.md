@@ -168,7 +168,7 @@ The following workflow walks through the steps of migrating an actual Vue 2 app 
    }
    ```
 
-   Note that this module declaration must be placed in a `*.d.ts` file which contains at least one other top-level import or export (`export {}` is enough) in order for these types to [augment the module](https://vuejs.org/guide/typescript/options-api.html#type-augmentation-placement) as opposed to overwriting it.
+   Note that this module declaration must be placed in a `*.d.ts` file which contains at least one other top-level import or export (`export {}` is enough) in order for these types to [augment the module](https://ru.vuejs.org/guide/typescript/options-api.html#type-augmentation-placement) as opposed to overwriting it.
 
 5. At this point, your application may encounter some compile-time errors / warnings (e.g. use of filters). Fix them first. If all compiler warnings are gone, you can also set the compiler to Vue 3 mode.
 
@@ -309,7 +309,7 @@ Features that start with `COMPILER_` are compiler-specific: if you are using the
 | GLOBAL_PROTOTYPE             | ✔    | `Vue.prototype` -> `app.config.globalProperties`                      | [link](./breaking-changes/global-api.html#vue-prototype-replaced-by-config-globalproperties) |
 | GLOBAL_SET                   | ✔    | `Vue.set` removed (no longer needed)                                  |                                                                                             |
 | GLOBAL_DELETE                | ✔    | `Vue.delete` removed (no longer needed)                               |                                                                                             |
-| GLOBAL_OBSERVABLE            | ✔    | `Vue.observable` removed (use `reactive`)                             | [link](https://vuejs.org/api/reactivity-core.html#reactive)                                 |
+| GLOBAL_OBSERVABLE            | ✔    | `Vue.observable` removed (use `reactive`)                             | [link](https://ru.vuejs.org/api/reactivity-core.html#reactive)                                 |
 | CONFIG_KEY_CODES             | ✔    | config.keyCodes removed                                               | [link](./breaking-changes/keycode-modifiers.html)                                            |
 | CONFIG_WHITESPACE            | ✔    | In Vue 3 whitespace defaults to `"condense"`                          |                                                                                             |
 | INSTANCE_SET                 | ✔    | `vm.$set` removed (no longer needed)                                  |                                                                                             |

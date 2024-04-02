@@ -94,5 +94,5 @@ const asyncComponent = defineAsyncComponent(
 
 Более подробную информацию об использовании асинхронных компонентов см:
 
-- [Руководство: Асинхронные компоненты](https://vuejs.org/guide/components/async.html)
+- [Руководство: Асинхронные компоненты](https://ru.vuejs.org/guide/components/async.html)
 - [Флаг миграционной сборки: `COMPONENT_ASYNC`](../migration-build.html#compat-configuration)

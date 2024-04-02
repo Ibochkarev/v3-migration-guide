@@ -116,5 +116,5 @@ The main differences are that:
 For more information on the usage of the new functional components and the changes to render functions in general, see:
 
 - [Migration: Render Functions](./render-function-api.html)
-- [Guide: Render Functions](https://vuejs.org/guide/extras/render-function.html#render-functions-jsx)
+- [Guide: Render Functions](https://ru.vuejs.org/guide/extras/render-function.html#render-functions-jsx)
 - [Флаг миграционной сборки: `COMPONENT_FUNCTIONAL`](../migration-build.html#compat-configuration)
