@@ -1,18 +1,18 @@
 ---
-title: v-on.native modifier removed
+title: Удалён модификатор v-on.native
 badges:
   - breaking
 ---
 
-# `v-on.native` modifier removed <MigrationBadges :badges="$frontmatter.badges" />
+# Удалён модификатор `v-on.native` <MigrationBadges :badges="$frontmatter.badges" />
 
 ## Обзор
 
-The `.native` modifier for `v-on` has been removed.
+Модификатор `.native` для `v-on` был удалён.
 
 ## 2.x Синтаксис
 
-Event listeners passed to a component with `v-on` are by default only triggered by emitting an event with `this.$emit`. To add a native DOM listener to the child component's root element instead, the `.native` modifier can be used:
+Обработчики событий, переданные в компонент через `v-on` по умолчанию вызываются по событию, которое генерируется с помощью `this.$emit`. Для добавления обработчика нативного события DOM к корневому элементу дочернего компонента требовалось использовать модификатор `.native`:
 
 ```html
 <my-component
@@ -23,9 +23,9 @@ Event listeners passed to a component with `v-on` are by default only triggered 
 
 ## 3.x Синтаксис
 
-The `.native` modifier for `v-on` has been removed. At the same time, the [new `emits` option](./emits-option.md) allows the child to define which events it does indeed emit.
+Модификатор `.native` для `v-on` был удалён. В то же время, [новая опция `emits`](./emits-option.md) позволяет дочерним компонентам определять, какие события он может генерировать.
 
-Consequently, Vue will now add all event listeners that are _not_ defined as component-emitted events in the child as native event listeners to the child's root element (unless `inheritAttrs: false` has been set in the child's options).
+Следовательно, Vue теперь добавит все слушатели событий, которые _не были_ объявлены как генерируемые дочерним компонентом, в качестве нативных слушателей событий (кроме случаев, когда `inheritAttrs: false` была задана в опциях дочернего компонента).
 
 ```html
 <my-component
@@ -34,7 +34,7 @@ Consequently, Vue will now add all event listeners that are _not_ defined as com
 />
 ```
 
-`MyComponent.vue`
+Содержимое `MyComponent.vue`:
 
 ```html
 <script>
@@ -46,10 +46,10 @@ Consequently, Vue will now add all event listeners that are _not_ defined as com
 
 ## Стратегия миграции
 
-- remove all instances of the `.native` modifier.
-- ensure that all your components document their events with the `emits` option.
+- удалить все экземпляры модификатора `.native`.
+- убедитесь, что все компоненты документируют свои события с помощью опции `emits`.
 
-[Флаг миграционной сборки: `COMPILER_V_ON_NATIVE`](../migration-build.html#compat-configuration)
+[Флаг сборки для миграции: `COMPILER_V_ON_NATIVE`](../migration-build.html#compat-configuration)
 
 ## См. также
 

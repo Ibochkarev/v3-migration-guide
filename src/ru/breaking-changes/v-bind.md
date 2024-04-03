@@ -1,5 +1,5 @@
 ---
-title: v-bind Merge Behavior
+title: Поведение при слиянии v-bind
 badges:
   - breaking
 ---
@@ -8,41 +8,41 @@ badges:
 
 ## Обзор
 
-- **КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ**: Order of bindings for v-bind will affect the rendering result.
+- **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ**: Порядок для привязок v-bind повлияет на результат отрисовки.
 
 ## Введение
 
-When dynamically binding attributes on an element, a common scenario involves using both the `v-bind="object"` syntax as well as individual attributes in the same element. However, this raises questions as far as the priority of merging.
+При динамической привязке атрибутов к элементу наиболее распространённым сценарием будет использование как синтаксиса `v-bind="object"`, так и отдельных атрибутов на этом же элементе. Однако, возникают вопросы приоритета при слиянии одинаковых атрибутов.
 
 ## 2.x Синтаксис
 
-In 2.x, if an element has both `v-bind="object"` and an identical individual attribute defined, the individual attribute would always overwrite bindings in the `object`.
+В версии 2.x если на элементе есть и `v-bind="object"`, и указан отдельно аналогичный атрибут, то индивидуальный атрибут будет всегда перезаписывать привязку из `object`.
 
 ```html
-<!-- template -->
+<!-- шаблон -->
 <div id="red" v-bind="{ id: 'blue' }"></div>
-<!-- result -->
+<!-- результат -->
 <div id="red"></div>
 ```
 
 ## 3.x Синтаксис
 
-In 3x, if an element has both `v-bind="object"` and an identical individual attribute defined, the order of how the bindings are declared determines how they are merged. In other words, rather than assuming developers want the individual attribute to always override what is defined in the `object`, developers now have more control over the desired merging behavior.
+В версии 3.x если на элементе есть и `v-bind="object"`, и указан отдельно аналогичный атрибут, то порядок объявления определяет стратегию слияния. Другими словами, вместо предположений какой индивидуальный атрибут должен будет переопределить привязку из `object`, разработчики теперь имеют контроль над желаемым поведением при слиянии.
 
 ```html
-<!-- template -->
+<!-- шаблон -->
 <div id="red" v-bind="{ id: 'blue' }"></div>
-<!-- result -->
+<!-- результат -->
 <div id="blue"></div>
 
-<!-- template -->
+<!-- шаблон -->
 <div v-bind="{ id: 'blue' }" id="red"></div>
-<!-- result -->
+<!-- результат -->
 <div id="red"></div>
 ```
 
 ## Стратегия миграции
 
-If you are relying on this override functionality for `v-bind`, we currently recommend ensuring that your `v-bind` attribute is defined before individual attributes.
+Если полагаетесь на эту функциональность переопределения для `v-bind`, то в настоящее время рекомендуем убедиться, что атрибут `v-bind` указывается перед индивидуальными атрибутами.
 
-[Флаг миграционной сборки: `COMPILER_V_BIND_OBJECT_ORDER`](../migration-build.html#compat-configuration)
+[Флаг сборки для миграции: `COMPILER_V_BIND_OBJECT_ORDER`](../migration-build.html#compat-configuration)

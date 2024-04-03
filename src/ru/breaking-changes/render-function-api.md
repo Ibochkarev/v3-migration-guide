@@ -131,7 +131,7 @@ For more information, see [The Render Function Api Change RFC](https://github.co
 
 ## Стратегия миграции
 
-[Флаг миграционной сборки: `RENDER_FUNCTION`](../migration-build.html#compat-configuration)
+[Флаг сборки для миграции: `RENDER_FUNCTION`](../migration-build.html#compat-configuration)
 
 ### Library Authors
 
@@ -141,6 +141,6 @@ For more information, see [The Render Function Api Change RFC](https://github.co
 - For module builds, the import should be left alone and be handled by the end user bundler
 - For UMD / browser builds, it should try the global Vue.h first and fallback to require calls
 
-## Next Steps
+## Дальнейшие шаги
 
 See [Render Function Guide](https://ru.vuejs.org/guide/extras/render-function.html) for more detailed documentation!

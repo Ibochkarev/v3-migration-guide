@@ -12,7 +12,7 @@ This change unifies normal and scoped slots in 3.x.
 Here is a quick summary of what has changed:
 
 - `this.$slots` now exposes slots as functions
-- **КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ**: `this.$scopedSlots` is removed
+- **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ**: `this.$scopedSlots` is removed
 
 For more information, read on!
 
@@ -64,4 +64,4 @@ A majority of the change has already been shipped in 2.6. As a result, the migra
 1. Replace all `this.$scopedSlots` occurrences with `this.$slots` in 3.x.
 2. Replace all occurrences of `this.$slots.mySlot` with `this.$slots.mySlot()`
 
-[Флаг миграционной сборки: `INSTANCE_SCOPED_SLOTS`](../migration-build.html#compat-configuration)
+[Флаг сборки для миграции: `INSTANCE_SCOPED_SLOTS`](../migration-build.html#compat-configuration)

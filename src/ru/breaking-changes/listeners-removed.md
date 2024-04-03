@@ -65,7 +65,7 @@ If this component received an `id` attribute and a `v-on:close` listener, the `$
 
 Remove all usages of `$listeners`.
 
-[Флаг миграционной сборки: `INSTANCE_LISTENERS`](../migration-build.html#compat-configuration)
+[Флаг сборки для миграции: `INSTANCE_LISTENERS`](../migration-build.html#compat-configuration)
 
 ## См. также
 

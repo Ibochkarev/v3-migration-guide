@@ -14,7 +14,7 @@ This is a low-level internal API change and does not affect most developers.
 Here is a high level summary of the changes:
 
 - Drop the internal concept of enumerated attributes and treat those attributes the same as normal non-boolean attributes
-- **КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ**: No longer removes attribute if the value is boolean `false`. Instead, it's set as attr="false". To remove the attribute, use `null` or `undefined`.
+- **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ**: No longer removes attribute if the value is boolean `false`. Instead, it's set as attr="false". To remove the attribute, use `null` or `undefined`.
 
 For more information, read on!
 
@@ -138,7 +138,7 @@ In 3.x, `null` or `undefined` should be used to explicitly remove an attribute.
   </tbody>
 </table>
 
-[Флаг миграционной сборкиs:](../migration-build.html#compat-configuration)
+[Флаг миграционной сборки:](../migration-build.html#compat-configuration)
 
 - `ATTR_FALSE_VALUE`
 - `ATTR_ENUMERATED_COERCION`

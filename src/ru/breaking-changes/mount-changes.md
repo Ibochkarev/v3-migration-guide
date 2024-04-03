@@ -91,7 +91,7 @@ When this app is mounted to the page that has a `div` with `id="app"`, this will
 
 ## Стратегия миграции
 
-[Флаг миграционной сборки: `GLOBAL_MOUNT_CONTAINER`](../migration-build.html#compat-configuration)
+[Флаг сборки для миграции: `GLOBAL_MOUNT_CONTAINER`](../migration-build.html#compat-configuration)
 
 ## См. также
 

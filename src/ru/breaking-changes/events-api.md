@@ -52,13 +52,13 @@ export default {
 }
 ```
 
-## 3.x Обновление
+## Что изменилось в 3.x
 
 We removed `$on`, `$off` and `$once` methods from the instance completely. `$emit` is still a part of the existing API as it's used to trigger event handlers declaratively attached by a parent component.
 
 ## Стратегия миграции
 
-[Флаг миграционной сборки: `INSTANCE_EVENT_EMITTER`](../migration-build.html#compat-configuration)
+[Флаг сборки для миграции: `INSTANCE_EVENT_EMITTER`](../migration-build.html#compat-configuration)
 
 In Vue 3, it is no longer possible to use these APIs to listen to a component's own emitted events from within a component. There is no migration path for that use case.
 

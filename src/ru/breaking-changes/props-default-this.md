@@ -33,4 +33,4 @@ export default {
 
 ## Стратегия миграции
 
-[Флаг миграционной сборки: `PROPS_DEFAULT_THIS`](../migration-build.html#compat-configuration)
+[Флаг сборки для миграции: `PROPS_DEFAULT_THIS`](../migration-build.html#compat-configuration)

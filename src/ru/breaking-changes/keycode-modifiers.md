@@ -9,8 +9,8 @@ badges:
 
 Here is a quick summary of what has changed:
 
-- **КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ**: Using numbers, i.e. keyCodes, as `v-on` modifiers is no longer supported
-- **КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ**: `config.keyCodes` is no longer supported
+- **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ**: Using numbers, i.e. keyCodes, as `v-on` modifiers is no longer supported
+- **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ**: `config.keyCodes` is no longer supported
 
 ## 2.x Синтаксис
 
@@ -66,7 +66,7 @@ The keys for some punctuation marks can just be included literally. e.g. For the
 
 Limitations of the syntax prevent certain characters from being matched, such as `"`, `'`, `/`, `=`, `>`, and `.`. For those characters you should check `event.key` inside the listener instead.
 
-[Флаг миграционной сборкиs:](../migration-build.html#compat-configuration)
+[Флаг миграционной сборки:](../migration-build.html#compat-configuration)
 
 - `CONFIG_KEY_CODES`
 - `V_ON_KEYCODE_MODIFIER`

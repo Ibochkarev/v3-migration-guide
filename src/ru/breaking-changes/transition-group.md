@@ -37,7 +37,7 @@ In Vue 3, we have [fragment support](../new/fragments.html), so components no lo
 
 ## Стратегия миграции
 
-[Флаг миграционной сборки: `TRANSITION_GROUP_ROOT`](../migration-build.html#compat-configuration)
+[Флаг сборки для миграции: `TRANSITION_GROUP_ROOT`](../migration-build.html#compat-configuration)
 
 ## См. также
 

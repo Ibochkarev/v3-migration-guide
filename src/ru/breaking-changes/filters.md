@@ -40,7 +40,7 @@ For example:
 
 While this seems like a convenience, it requires a custom syntax that breaks the assumption of expressions inside curly braces being "just JavaScript," which has both learning and implementation costs.
 
-## 3.x Обновление
+## Что изменилось в 3.x
 
 In 3.x, filters are removed and no longer supported. Instead, we recommend replacing them with method calls or computed properties.
 
@@ -73,7 +73,7 @@ Using the example above, here is one example of how it could be implemented.
 
 Instead of using filters, we recommend replacing them with computed properties or methods.
 
-[Флаг миграционной сборкиs:](../migration-build.html#compat-configuration)
+[Флаг миграционной сборки:](../migration-build.html#compat-configuration)
 
 - `FILTERS`
 - `COMPILER_FILTERS`

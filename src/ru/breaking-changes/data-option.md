@@ -8,9 +8,9 @@ badges:
 
 ## Обзор
 
-- **КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ**: `data` component option declaration no longer accepts a plain JavaScript `object` and expects a `function` declaration.
+- **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ**: `data` component option declaration no longer accepts a plain JavaScript `object` and expects a `function` declaration.
 
-- **КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ**: when merging multiple `data` return values from mixins or extends, the merge is now shallow instead of deep (only root-level properties are merged).
+- **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ**: when merging multiple `data` return values from mixins or extends, the merge is now shallow instead of deep (only root-level properties are merged).
 
 ## 2.x Синтаксис
 
@@ -42,7 +42,7 @@ For example:
 
 Though this provided some convenience in terms of root instances having a shared state, this has led to confusion due to the fact that its only possible on the root instance.
 
-## 3.x Обновление
+## Что изменилось в 3.x
 
 In 3.x, the `data` option has been standardized to only accept a `function` that returns an `object`.
 
@@ -111,7 +111,7 @@ In 3.0, the result will be:
 }
 ```
 
-[Флаг миграционной сборки: `OPTIONS_DATA_FN`](../migration-build.html#compat-configuration)
+[Флаг сборки для миграции: `OPTIONS_DATA_FN`](../migration-build.html#compat-configuration)
 
 ## Стратегия миграции
 
@@ -122,7 +122,7 @@ For users relying on the object declaration, we recommend:
 
 For users relying on the deep merge behavior from mixins, we recommend refactoring your code to avoid such reliance altogether, since deep merges from mixins are very implicit and can make the code logic more difficult to understand and debug.
 
-[Флаг миграционной сборкиs:](../migration-build.html#compat-configuration)
+[Флаг миграционной сборки:](../migration-build.html#compat-configuration)
 
 - `OPTIONS_DATA_FN`
 - `OPTIONS_DATA_MERGE`

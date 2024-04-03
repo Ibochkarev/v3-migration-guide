@@ -7,8 +7,8 @@ badges:
 
 ## Обзор
 
-- **КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ:** The checks to determine whether tags should be treated as custom elements are now performed during template compilation, and should be configured via compiler options instead of runtime config.
-- **КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ:** Special `is` attribute usage is restricted to the reserved `<component>` tag only.
+- **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ:** The checks to determine whether tags should be treated as custom elements are now performed during template compilation, and should be configured via compiler options instead of runtime config.
+- **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ:** Special `is` attribute usage is restricted to the reserved `<component>` tag only.
 - **НОВОЕ:** To support 2.x use cases where `is` was used on native elements to work around native HTML parsing restrictions, prefix the value with `vue:` to resolve it as a Vue component.
 
 ## Autonomous Custom Elements
@@ -96,7 +96,7 @@ In 3.0, we are limiting Vue's special treatment of the `is` attribute to the `<c
     document.createElement('button', { is: 'plastic-button' })
     ```
 
-[Флаг миграционной сборки: `COMPILER_IS_ON_ELEMENT`](../migration-build.html#compat-configuration)
+[Флаг сборки для миграции: `COMPILER_IS_ON_ELEMENT`](../migration-build.html#compat-configuration)
 
 ## `vue:` Prefix for In-DOM Template Parsing Workarounds
 

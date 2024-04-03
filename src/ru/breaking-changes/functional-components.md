@@ -11,8 +11,8 @@ In terms of what has changed, at a high level:
 
 - Performance gains from 2.x for functional components are now negligible in 3.x, so we recommend just using stateful components
 - Functional components can only be created using a plain function that receives `props` and `context` (i.e., `slots`, `attrs`, `emit`)
-- **КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ:** `functional` attribute on single-file component (SFC) `<template>` is removed
-- **КРИТИЧЕСКОЕ ИЗМЕНЕНИЕ:** `{ functional: true }` option in components created by functions is removed
+- **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ:** `functional` attribute on single-file component (SFC) `<template>` is removed
+- **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ:** `{ functional: true }` option in components created by functions is removed
 
 For more information, read on!
 
@@ -111,10 +111,10 @@ The main differences are that:
 1. `functional` attribute removed on `<template>`
 1. `listeners` are now passed as part of `$attrs` and can be removed
 
-## Next Steps
+## Дальнейшие шаги
 
 For more information on the usage of the new functional components and the changes to render functions in general, see:
 
 - [Migration: Render Functions](./render-function-api.html)
 - [Guide: Render Functions](https://ru.vuejs.org/guide/extras/render-function.html#render-functions-jsx)
-- [Флаг миграционной сборки: `COMPONENT_FUNCTIONAL`](../migration-build.html#compat-configuration)
+- [Флаг сборки для миграции: `COMPONENT_FUNCTIONAL`](../migration-build.html#compat-configuration)
