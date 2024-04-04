@@ -90,8 +90,8 @@ Here you have two options:
 
 ## См. также
 
-- [Relevant RFC](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0030-emits-option.md)
-- [Migration guide - `.native` modifier removed](./v-on-native-modifier-removed.md)
-- [Migration guide - `$listeners` removed](./listeners-removed.md)
+- [Соответствующий RFC](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0030-emits-option.md)
+- [Руководство по миграции - Удалён модификатор `v-on.native`](./v-on-native-modifier-removed.md)
+- [Руководство по миграции — Удалены `$listeners`](./listeners-removed.md)
 - [Migration guide - `$attrs` includes `class` & `style`](./attrs-includes-class-style.md)
-- [Migration guide - Changes in the Render Functions API](./render-function-api.md)
+- [Руководство по миграции — Изменения в API render-функций](./render-function-api.md)

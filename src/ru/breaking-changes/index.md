@@ -47,8 +47,8 @@ While it looks like a lot has changed, a lot of what you know and love about Vue
 - [The `data` option should always be declared as a function](./data-option.html)
 - [The `data` option from mixins is now merged shallowly](./data-option.html#mixin-merge-behavior-change)
 - [Attributes coercion strategy changed](./attribute-coercion.html)
-- [Some transition classes got a rename](./transition.html)
-- [`<TransitionGroup>` now renders no wrapper element by default](./transition-group.html)
+- [Переименованы некоторые классы `<transition>`](./transition.html)
+- [`<TransitionGroup>` теперь не имеет корневого элемента по умолчанию](./transition-group.html)
 - [When watching an array, the callback will only trigger when the array is replaced. If you need to trigger on mutation, the `deep` option must be specified.](./watch.html)
 - `<template>` tags with no special directives (`v-if/else-if/else`, `v-for`, or `v-slot`) are now treated as plain elements and will result in a native `<template>` element instead of rendering its inner content.
 - [Mounted application does not replace the element it's mounted to](./mount-changes.html)

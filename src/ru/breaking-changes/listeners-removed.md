@@ -69,8 +69,8 @@ Remove all usages of `$listeners`.
 
 ## См. также
 
-- [Relevant RFC](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0031-attr-fallthrough.md)
+- [Соответствующий RFC](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0031-attr-fallthrough.md)
 - [Migration guide - `$attrs` includes `class` & `style`](./attrs-includes-class-style.md)
-- [Migration guide - Changes in the Render Functions API](./render-function-api.md)
-- [Migration guide - New Emits Option](./emits-option.md)
-- [Migration guide - `.native` modifier removed](./v-on-native-modifier-removed.md)
+- [Руководство по миграции — Изменения в API render-функций](./render-function-api.md)
+- [Руководство по миграции — Новая опция emits](./emits-option.md)
+- [Руководство по миграции - Удалён модификатор `v-on.native`](./v-on-native-modifier-removed.md)

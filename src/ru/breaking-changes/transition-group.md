@@ -1,5 +1,5 @@
 ---
-title: Transition Group Root Element
+title: Корневой элемент <transition-group> больше не создаётся
 badges:
   - breaking
 ---
@@ -8,11 +8,11 @@ badges:
 
 ## Обзор
 
-`<transition-group>` no longer renders a root element by default, but can still create one with the `tag` attribute.
+Теперь `<transition-group>` по умолчанию больше не создаёт корневой элемент при отрисовке, но может его создавать при указании атрибута `tag`.
 
 ## 2.x Синтаксис
 
-In Vue 2, `<transition-group>`, like other custom components, needed a root element, which by default was a `<span>` but was customizable via the `tag` attribute.
+Во Vue 2, `<transition-group>` как и другие пользовательские компоненты, нуждался в корневом элементе, который по умолчанию был `<span>`, но настраивался через атрибут `tag`.
 
 ```html
 <transition-group tag="ul">
@@ -24,10 +24,9 @@ In Vue 2, `<transition-group>`, like other custom components, needed a root elem
 
 ## 3.x Синтаксис
 
-In Vue 3, we have [fragment support](../new/fragments.html), so components no longer _need_ a root node. Consequently, `<transition-group>` no longer renders one by default.
+Во Vue 3 теперь появилась [поддержка фрагментов](../new/fragments.html), поэтому корневой тег больше не нужен компонентам. Поэтому по умолчанию `<transition-group>` и не отрисовывает его.
 
-- If you already have the `tag` attribute defined in your Vue 2 code, like in the example above, everything will work as before
-- If you didn't have one defined _and_ your styling or other behaviors relied on the presence of the `<span>` root element to work properly, simply add `tag="span"` to the `<transition-group>`:
+Если уже указан атрибут `tag` в коде Vue 2, как в примере выше, то всё будет работать как и раньше. Если атрибут не указывался и стилизация или другое поведение полагается на наличие корневого элемента `<span>`, то добавьте `tag="span"` в `<transition-group>`:
 
 ```html
 <transition-group tag="span">
@@ -41,5 +40,5 @@ In Vue 3, we have [fragment support](../new/fragments.html), so components no lo
 
 ## См. также
 
-- [Some transition classes got a rename](./transition.html)
-- [`<Transition>` as a root can no longer be toggled from the outside](./transition-as-root.html)
+- [Переименованы некоторые классы `<transition>`](./transition.html)
+- [Использование `<transition>` корневым элементом](./transition-as-root.html)

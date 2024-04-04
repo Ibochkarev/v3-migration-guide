@@ -3,7 +3,7 @@ badges:
   - breaking
 ---
 
-# Render Function API <MigrationBadges :badges="$frontmatter.badges" />
+# Изменён API render-функций <MigrationBadges :badges="$frontmatter.badges" />
 
 ## Обзор
 
@@ -72,7 +72,7 @@ In 2.x, `domProps` contained a nested list within the VNode props:
 In 3.x, the entire VNode props structure is flattened. Using the example from above, here is what it would look like now.
 
 ```js
-// 3.x Syntax
+// Синтаксис в 3.x
 {
   class: ['button', { 'is-outlined': isOutlined }],
   style: [{ color: '#34495E' }, { backgroundColor: buttonColor }],

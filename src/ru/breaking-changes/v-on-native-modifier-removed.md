@@ -53,7 +53,7 @@ badges:
 
 ## См. также
 
-- [Relevant RFC](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0031-attr-fallthrough.md#v-on-listener-fallthrough)
-- [Migration guide - New Emits Option](./emits-option.md)
-- [Migration guide - `$listeners` removed](./listeners-removed.md)
-- [Migration guide - Changes in the Render Functions API](./render-function-api.md)
+- [Соответствующий RFC](https://github.com/vuejs/rfcs/blob/master/active-rfcs/0031-attr-fallthrough.md#v-on-listener-fallthrough)
+- [Руководство по миграции — Новая опция emits](./emits-option.md)
+- [Руководство по миграции — Удалены `$listeners`](./listeners-removed.md)
+- [Руководство по миграции — Изменения в API render-функций](./render-function-api.md)
