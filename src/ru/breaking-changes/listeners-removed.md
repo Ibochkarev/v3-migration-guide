@@ -17,7 +17,7 @@ The `$listeners` object has been removed in Vue 3. Event listeners are now part 
 }
 ```
 
-## 2.x Синтаксис
+## Синтаксис в 2.x
 
 In Vue 2, you can access attributes passed to your components with `this.$attrs`, and event listeners with `this.$listeners`.
 In combination with `inheritAttrs: false`, they allow the developer to apply these attributes and listeners to some other element instead of the root element:
@@ -35,7 +35,7 @@ In combination with `inheritAttrs: false`, they allow the developer to apply the
 </script>
 ```
 
-## 3.x Синтаксис
+## Синтаксис в 3.x
 
 In Vue 3's virtual DOM, event listeners are now just attributes, prefixed with `on`, and as such are part of the `$attrs` object, so `$listeners` has been removed.
 

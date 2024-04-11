@@ -10,7 +10,7 @@ badges:
 
 In Vue 2.x, when mounting an application that has a `template`, the rendered content replaces the element we mount to. In Vue 3.x, the rendered application is appended as a child of such an element, replacing element's `innerHTML`.
 
-## 2.x Синтаксис
+## Синтаксис в 2.x
 
 In Vue 2.x, we pass an HTML element selector to `new Vue()` or `$mount`:
 
@@ -60,7 +60,7 @@ in the rendered result, the mentioned `div` will be replaced with the rendered a
 </body>
 ```
 
-## 3.x Синтаксис
+## Синтаксис в 3.x
 
 In Vue 3.x, when we mount an application, its rendered content will replace the `innerHTML` of the element we pass to `mount`:
 

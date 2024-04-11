@@ -19,7 +19,7 @@ For more information, read on!
 
 ## Render Function Argument
 
-### 2.x Синтаксис
+### Синтаксис в 2.x
 
 In 2.x, the `render` function would automatically receive the `h` function (which is a conventional alias for `createElement`) as an argument:
 
@@ -32,7 +32,7 @@ export default {
 }
 ```
 
-### 3.x Синтаксис
+### Синтаксис в 3.x
 
 In 3.x, `h` is now globally imported instead of being automatically passed as an argument.
 
@@ -49,7 +49,7 @@ export default {
 
 ## VNode Props Format
 
-### 2.x Синтаксис
+### Синтаксис в 2.x
 
 In 2.x, `domProps` contained a nested list within the VNode props:
 
@@ -67,7 +67,7 @@ In 2.x, `domProps` contained a nested list within the VNode props:
 }
 ```
 
-### 3.x Синтаксис
+### Синтаксис в 3.x
 
 In 3.x, the entire VNode props structure is flattened. Using the example from above, here is what it would look like now.
 
@@ -85,7 +85,7 @@ In 3.x, the entire VNode props structure is flattened. Using the example from ab
 
 ## Registered Component
 
-### 2.x Синтаксис
+### Синтаксис в 2.x
 
 In 2.x, when a component has been registered, the render function would work well when passing the component's name as a string to the first argument:
 
@@ -111,7 +111,7 @@ export default {
 }
 ```
 
-### 3.x Синтаксис
+### Синтаксис в 3.x
 
 In 3.x, with VNodes being context-free, we can no longer use a string ID to implicitly lookup registered components. Instead, we need to use an imported `resolveComponent` method:
 

@@ -12,7 +12,7 @@ Here is a quick summary of what has changed:
 - **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ**: Using numbers, i.e. keyCodes, as `v-on` modifiers is no longer supported
 - **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ**: `config.keyCodes` is no longer supported
 
-## 2.x Синтаксис
+## Синтаксис в 2.x
 
 In Vue 2, `keyCodes` were supported as a way to modify a `v-on` method.
 
@@ -40,7 +40,7 @@ Vue.config.keyCodes = {
 <input v-on:keyup.f1="showHelpText" />
 ```
 
-## 3.x Синтаксис
+## Синтаксис в 3.x
 
 Since [`KeyboardEvent.keyCode` has been deprecated](https://developer.mozilla.org/en-US/docs/Web/API/KeyboardEvent/keyCode), it no longer makes sense for Vue 3 to continue supporting this as well. As a result, it is now recommended to use the kebab-case name for any key you want to use as a modifier.
 
