@@ -3,15 +3,15 @@ badges:
   - breaking
 ---
 
-# Events API <MigrationBadges :badges="$frontmatter.badges" />
+# Удалено API для событий <MigrationBadges :badges="$frontmatter.badges" />
 
 ## Обзор
 
-`$on`, `$off` and `$once` instance methods are removed. Component instances no longer implement the event emitter interface.
+Методы экземпляров `$on`, `$off` и `$once` были удалены. Экземпляры компонентов больше не реализуют интерфейс эмиттера событий.
 
 ## 2.x Синтаксис
 
-In 2.x, a Vue instance could be used to trigger handlers attached imperatively via the event emitter API (`$on`, `$off` and `$once`). This could be used to create an _event bus_ to create global event listeners used across the whole application:
+В версии 2.x, экземпляр Vue можно было использовать для вызова обработчиков, которые привязывались императивно через API эмиттера событий (`$on`, `$off` и `$once`). Это можно было использовать для реализации _шины событий_ и создания глобальных прослушивателей событий, используемых во всем приложении:
 
 ```js
 // eventBus.js
@@ -27,13 +27,13 @@ import eventBus from './eventBus'
 
 export default {
   mounted() {
-    // adding eventBus listener
+    // привязка слушателя к шине событий
     eventBus.$on('custom-event', () => {
-      console.log('Custom event triggered!')
+      console.log('Вызвано пользовательское событие!')
     })
   },
   beforeDestroy() {
-    // removing eventBus listener
+    // удаление слушателя из шины событий
     eventBus.$off('custom-event')
   }
 }
@@ -46,7 +46,7 @@ import eventBus from './eventBus'
 export default {
   methods: {
     callGlobalCustomEvent() {
-      eventBus.$emit('custom-event') // if ChildComponent is mounted, we will have a message in the console
+      eventBus.$emit('custom-event') // если ChildComponent примонтирован, то появится сообщение в консоли
     }
   }
 }
@@ -54,32 +54,32 @@ export default {
 
 ## Что изменилось в 3.x
 
-We removed `$on`, `$off` and `$once` methods from the instance completely. `$emit` is still a part of the existing API as it's used to trigger event handlers declaratively attached by a parent component.
+Из экземпляра полностью удалены методы `$on`, `$off` и `$once`. Метод `$emit` всё ещё является частью существующего API, так как он используется для запуска обработчиков событий, декларативно прикреплённых к родительским компонентам.
 
 ## Стратегия миграции
 
 [Флаг сборки для миграции: `INSTANCE_EVENT_EMITTER`](../migration-build.html#compat-configuration)
 
-In Vue 3, it is no longer possible to use these APIs to listen to a component's own emitted events from within a component. There is no migration path for that use case.
+Во Vue 3 больше нет возможности использовать эти API чтобы прослушивать генерируемые события в компоненте в других компонентах, для подобного применения нет пути миграции.
 
-### Root Component Events
+### События корневого компонента
 
-Static event listeners can be added to the root component by passing them as props to `createApp`:
+Статические слушатели событий можно добавить в корневой компонент, передавая их в качестве входных параметров в `createApp`:
 
 ```js
 createApp(App, {
-  // Listen for the 'expand' event
+  // Прослушивание события 'expand'
   onExpand() {
     console.log('expand')
   }
 })
 ```
 
-### Event Bus
+### Шина событий
 
-The event bus pattern can be replaced by using an external library implementing the event emitter interface, for example [mitt](https://github.com/developit/mitt) or [tiny-emitter](https://github.com/scottcorgan/tiny-emitter).
+Паттерн шины событий можно использовать с помощью внешней библиотеки, реализующей интерфейс эмиттера событий, например [mitt](https://github.com/developit/mitt) или [tiny-emitter](https://github.com/scottcorgan/tiny-emitter).
 
-Example:
+Например:
 
 ```js
 // eventBus.js
@@ -93,12 +93,12 @@ export default {
 }
 ```
 
-This provides the same event emitter API as in Vue 2.
+Это обеспечивает такой же API событий, как и во Vue 2.
 
-In most circumstances, using a global event bus for communicating between components is discouraged. While it is often the simplest solution in the short term, it almost invariably proves to be a maintenance headache in the long term. Depending on the circumstances, there are various alternatives to using an event bus:
+В большинстве случаев не рекомендуется использовать глобальную шину событий для связи между компонентами. Хотя в краткосрочной перспективе это часто самое простое решение, в долгосрочной перспективе оно почти всегда оказывается головной болью при обслуживании. В зависимости от обстоятельств, существуют различные альтернативы использованию шины событий:
 
-* Props and events should be your first choice for parent-child communication. Siblings can communicate via their parent.
-* Provide / inject allow a component to communicate with its slot contents. This is useful for tightly-coupled components that are always used together.
-* Provide / inject can also be used for long-distance communication between components. It can help to avoid 'prop drilling', where props need to be passed down through many levels of components that don't need those props themselves.
-* Prop drilling can also be avoided by refactoring to use slots. If an interim component doesn't need the props then it might indicate a problem with separation of concerns. Introducing a slot in that component allows the parent to create the content directly, so that props can be passed without the interim component needing to get involved.
-* [Global state management](https://ru.vuejs.org/guide/scaling-up/state-management.html), such as [Pinia](https://pinia.vuejs.org/).
+* Входные параметры и события должны быть основным выбором для общения между родителями и дочерними компонентами. Соседние компоненты могут общаться через своего родителя.
+* Provide / inject позволяют компоненту взаимодействовать с содержимым своего слота. Это полезно для тесно связанных компонентов, которые всегда используются вместе.
+* Provide / inject также можно использовать для связи компонентов на большом расстоянии. Это может помочь избежать «прокидывания» входных параметров, когда потребуется передать данные через несколько уровней компонентов, которым эти данные не нужны.
+* Прокидывание входных параметров можно также избежать путём рефакторинга для использования слотов. Если промежуточный компонент не нуждается в этих входных параметрах, это может указывать на проблему с разделением ответственности. Внедрение слота в этот компонент позволит родительскому предоставлять содержимое для слота самостоятельно, так что входной параметр можно будет передать напрямую, без участия промежуточного компонента.
+* [Глобальное управление состоянием](https://ru.vuejs.org/guide/scaling-up/state-management.html), например с помощью [Pinia](https://pinia.vuejs.org/).

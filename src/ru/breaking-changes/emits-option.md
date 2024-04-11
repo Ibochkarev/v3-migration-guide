@@ -1,18 +1,18 @@
 ---
-title: emits Option
+title: Добавлена опция emits
 badges:
   - new
 ---
 
-# `emits` Option <MigrationBadges :badges="$frontmatter.badges" />
+# Добавлена опция `emits` <MigrationBadges :badges="$frontmatter.badges" />
 
 ## Обзор
 
-Vue 3 now offers an `emits` option, similar to the existing `props` option. This option can be used to define the events that a component can emit to its parent.
+Vue 3 теперь предоставляет опцию `emits`, похожую на существующую опцию `props`. Её можно использовать для объявления событий, которые могут быть сгенерированы компонентом для своих родителей.
 
 ## 2.x Поведение
 
-In Vue 2, you can define the props that a component receives, but you can't declare which events it can emit:
+Во Vue 2 можно объявлять входные параметры, которые компонент получает, но нет возможности объявить какие события он может генерировать:
 
 ```vue
 <template>
@@ -30,7 +30,7 @@ In Vue 2, you can define the props that a component receives, but you can't decl
 
 ## 3.x Поведение
 
-Similar to props, the events that the component emits can now be defined with the `emits` option:
+Аналогично входным параметрам, теперь можно определить события которые генерирует компонент с помощью опции `emits`:
 
 ```vue
 <template>
@@ -47,19 +47,19 @@ Similar to props, the events that the component emits can now be defined with th
 </script>
 ```
 
-The option also accepts an object, which allows the developer to define validators for the arguments that are passed with the emitted event, similar to validators in `props` definitions.
+Опция также принимает объект, что позволяет указать валидаторы для аргументов, которые передаются вместе с генерируемым событием, аналогично валидации при объявлении `props`.
 
-For more information on this, please read the [API documentation for this feature](https://ru.vuejs.org/api/options-state.html#emits).
+Для получения дополнительной информации, ознакомьтесь с [документацией API для этой возможности](https://ru.vuejs.org/api/options-state.html#emits).
 
 ## Стратегия миграции
 
-It is highly recommended that you document all the events emitted by each of your components using `emits`.
+Настоятельно рекомендуется документировать все события, которые может генерировать компонент с помощью `emits`.
 
-This is especially important because of [the removal of the `.native` modifier](./v-on-native-modifier-removed.md). Any listeners for events that aren't declared with `emits` will now be included in the component's `$attrs`, which by default will be bound to the component's root node.
+Это особенно важно из-за [удаления модификатора `.native`](v-on-native-modifier-removed.md). Теперь любой слушатель события, не указанный в `emits`, будет добавлен в свойство `$attrs` компонента, что по умолчанию станет привязывать его к корневому узлу компонента.
 
-### Example
+### Пример
 
-For components that re-emit native events to their parent, this would now lead to two events being fired:
+Для компонентов, которые переопределяют нативные события для своих родителей, это приведёт к генерации двух событий:
 
 ```vue
 <template>
@@ -67,26 +67,26 @@ For components that re-emit native events to their parent, this would now lead t
 </template>
 <script>
 export default {
-  emits: [] // without declared event
+  emits: [] // без объявленного события
 }
 </script>
 ```
 
-When a parent listens for the `click` event on the component:
+Когда родитель прослушивает событие `click` на компоненте:
 
 ```html
 <my-button v-on:click="handleClick"></my-button>
 ```
 
-it would now be triggered _twice_:
+обработчик события будет вызван _дважды_:
 
-- Once from `$emit()`.
-- Once from a native event listener applied to the root element.
+- Один раз от `$emit()`.
+- Один раз от нативного обработчика события, привязанного к корневому элементу.
 
-Here you have two options:
+Здесь есть два варианта:
 
-1. Properly declare the `click` event. This is useful if you actually do add some logic to that event handler in `<my-button>`.
-2. Remove the re-emitting of the event, since the parent can now listen for the native event easily, without adding `.native`. Suitable when you really only re-emit the event anyway.
+1. Корректно объявить событие `click`. Это полезно, если действительно добавите некоторую логику в обработчик события в `<my-button>`.
+2. Удалить повторную генерацию события, так как родитель может легко отслеживать нативные события, без добавления `.native`. Подходит в тех случаях, когда действительно генерируете заново событие в любом случае.
 
 ## См. также
 

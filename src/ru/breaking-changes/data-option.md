@@ -1,5 +1,5 @@
 ---
-title: Data Option
+title: Опцию data необходимо указывать только функцией
 badges:
   - breaking
 ---
@@ -8,18 +8,18 @@ badges:
 
 ## Обзор
 
-- **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ**: `data` component option declaration no longer accepts a plain JavaScript `object` and expects a `function` declaration.
+- **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ:** опция локального состояния `data` компонента больше не принимает обычный объект JavaScript и ожидает объявление функции.
 
-- **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ**: when merging multiple `data` return values from mixins or extends, the merge is now shallow instead of deep (only root-level properties are merged).
+- **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ**: при объединении нескольких возвращаемых значений `data` из миксинов или расширений теперь происходит не глубокое, а поверхностное объединение (объединяются только свойства корневого уровня).
 
 ## 2.x Синтаксис
 
-In 2.x, developers could define the `data` option with either an `object` or a `function`.
+В 2.x разработчики могли определять опцию `data` используя как `object`, так и `function`.
 
-For example:
+Например:
 
 ```html
-<!-- Object Declaration -->
+<!-- Объявление объектом -->
 <script>
   const app = new Vue({
     data: {
@@ -40,13 +40,13 @@ For example:
 </script>
 ```
 
-Though this provided some convenience in terms of root instances having a shared state, this has led to confusion due to the fact that its only possible on the root instance.
+Хотя это обеспечило некоторое удобство с точки зрения того, что корневые экземпляры имеют общее состояние, это привело к путанице, потому что подобное возможно только на корневом экземпляре.
 
 ## Что изменилось в 3.x
 
-In 3.x, the `data` option has been standardized to only accept a `function` that returns an `object`.
+В 3.x опция `data` была стандартизирована и теперь принимает только функцию, возвращающую объект.
 
-Using the example above, there would only be one possible implementation of the code:
+Для примера выше потребуется только одно изменение в реализованном коде:
 
 ```html
 <script>
@@ -62,9 +62,9 @@ Using the example above, there would only be one possible implementation of the 
 </script>
 ```
 
-## Mixin Merge Behavior Change
+## Изменение поведения при слиянии с примесями
 
-In addition, when `data()` from a component and its mixins or extends base are merged, the merge is now performed *shallowly*:
+Кроме того, слияние `data()` из компонента и его примесей или расширений теперь будет выполняться *неглубоко*:
 
 ```js
 const Mixin = {
@@ -90,7 +90,7 @@ const CompA = {
 }
 ```
 
-In Vue 2.x, the resulting `$data` is:
+Во Vue 2.x в результате `$data` была бы такой:
 
 ```json
 {
@@ -101,7 +101,7 @@ In Vue 2.x, the resulting `$data` is:
 }
 ```
 
-In 3.0, the result will be:
+Во Vue 3.х результат будет таким:
 
 ```json
 {
@@ -115,12 +115,12 @@ In 3.0, the result will be:
 
 ## Стратегия миграции
 
-For users relying on the object declaration, we recommend:
+Для пользователей, полагающихся на объявление объектом рекомендуем:
 
-- Extracting the shared data into an external object and using it as a property in `data`
-- Rewrite references to the shared data to point to a new shared object
+- Извлечь общие данные во внешний объект и использовать его в качестве значения `data`
+- Переписать ссылки на общие данные, чтобы указывали на новый общий объект
 
-For users relying on the deep merge behavior from mixins, we recommend refactoring your code to avoid such reliance altogether, since deep merges from mixins are very implicit and can make the code logic more difficult to understand and debug.
+Пользователям, полагающимся на поведение глубокого слияния в примесях, рекомендуем отрефакторить код так, чтобы полностью избежать такой зависимости, поскольку глубокое слияние в примесях очень неявно и может усложнить понимание и отладку логики в коде.
 
 [Флаг миграционной сборки:](../migration-build.html#compat-configuration)
 
