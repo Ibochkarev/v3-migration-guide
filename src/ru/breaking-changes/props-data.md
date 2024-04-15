@@ -3,15 +3,15 @@ badges:
   - removed
 ---
 
-# `propsData` <MigrationBadges :badges="$frontmatter.badges" />
+# Удалена опция `propsData` <MigrationBadges :badges="$frontmatter.badges" />
 
 ## Обзор
 
-Опция `propsData`, использовавшаяся для передачи props экземпляру Vue при его создании, удалена. Чтобы передать props корневому компоненту приложения Vue 3, используйте второй аргумент опции [createApp](https://ru.vuejs.org/api/application.html#createapp).
+Опция `propsData`, используемая для передачи входных параметров в экземпляр Vue во время его создания, была удалена. Для передачи входных параметров в корневой компонент приложения во Vue 3 теперь нужно использовать второй аргумент [createApp](../../api/global-api.md#createapp).
 
 ## Синтаксис в 2.x
 
-В версии 2.x мы могли передавать props экземпляру Vue во время его создания:
+В версии 2.x можно передавать входные параметры экземпляру Vue во время его создания:
 
 ```js
 const Comp = Vue.extend({
@@ -21,14 +21,14 @@ const Comp = Vue.extend({
 
 new Comp({
   propsData: {
-    username: 'Эван'
+    username: 'Evan'
   }
 })
 ```
 
-## Что изменилось в 3.x
+## Изменения в 3.x
 
-Опция `propsData` была удалена. Если вам нужно передать props корневому экземпляру компонента при его создании, используйте второй аргумент `createApp`:
+Опция `propsData` была удалена. При необходимости передать входные параметры в экземпляр корневого компонента следует использовать второй аргумент `createApp`:
 
 ```js
 const app = createApp(
@@ -36,6 +36,6 @@ const app = createApp(
     props: ['username'],
     template: '<div>{{ username }}</div>'
   },
-  { username: 'Эван' }
+  { username: 'Evan' }
 )
 ```

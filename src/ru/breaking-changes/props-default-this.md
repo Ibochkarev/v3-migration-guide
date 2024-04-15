@@ -1,18 +1,18 @@
 ---
-title: Props Default Function this Access
+title: Удалён доступ к this в функции значения по умолчанию входного параметра
 badges:
   - breaking
 ---
 
-# Props Default Function `this` Access <MigrationBadges :badges="$frontmatter.badges" />
+# Удалён доступ к `this` в функции значения по умолчанию входного параметра <MigrationBadges :badges="$frontmatter.badges" />
 
-Props default value factory functions no longer have access to `this`.
+В функции значения по умолчанию, для входного параметра, больше нет доступа к `this`.
 
-Instead:
+Вместо этого:
 
-- Raw props received by the component are passed to the default function as argument;
+- Необработанные входные параметры, полученные компонентом, передаются аргументом в функцию значения по умолчанию;
 
-- The [inject](https://ru.vuejs.org/api/composition-api-dependency-injection.html#inject) API can be used inside default functions.
+- Можно теперь использовать API [inject](https://ru.vuejs.org/api/composition-api-dependency-injection.html#inject) внутри функций значения по умолчанию.
 
 ```js
 import { inject } from 'vue'
@@ -20,10 +20,10 @@ import { inject } from 'vue'
 export default {
   props: {
     theme: {
-      default (props) {
-        // `props` is the raw values passed to the component,
-        // before any type / default coercions
-        // can also use `inject` to access injected properties
+      default(props) {
+        // `props` — необработанные значения, передаваемые компоненту,
+        // перед любыми обработчиками type / default
+        // можно использовать `inject` для доступа к внедряемым свойствам
         return inject('theme', 'default-theme')
       }
     }

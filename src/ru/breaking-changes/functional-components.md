@@ -3,36 +3,37 @@ badges:
   - breaking
 ---
 
-# Functional Components <MigrationBadges :badges="$frontmatter.badges" />
+# Изменения функциональных компонентов <MigrationBadges :badges="$frontmatter.badges" />
 
 ## Обзор
 
-In terms of what has changed, at a high level:
+Краткий обзор того, что изменилось:
 
-- Performance gains from 2.x for functional components are now negligible in 3.x, so we recommend just using stateful components
-- Functional components can only be created using a plain function that receives `props` and `context` (i.e., `slots`, `attrs`, `emit`)
-- **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ:** `functional` attribute on single-file component (SFC) `<template>` is removed
-- **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ:** `{ functional: true }` option in components created by functions is removed
+- Выигрыш по производительности функциональных компонентов в 2.x пренебрежительно мал в 3.x, поэтому рекомендуется просто использовать компоненты с состоянием
+- Функциональные компоненты могут создаваться только с помощью простых функций, которые получают аргументами `props` и `context` (т.е., `slots`, `attrs`, `emit`)
+- **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ:** удалён атрибут `functional` для `<template>` однофайловых компонентов (SFC)
+- **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ:** удалена опция `{ functional: true }` в компонентах, создаваемых функциями
 
-For more information, read on!
+Для получения дополнительной информации читайте дальше!
 
 ## Введение
 
-In Vue 2, functional components had two primary use cases:
+Во Vue 2 функциональные компоненты в основном использовались в двух случаях:
 
-- as a performance optimization, because they initialized much faster than stateful components
-- to return multiple root nodes
+- для оптимизации производительности, потому что инициализировались быстрее, чем компоненты с состоянием
+- для возможности возвращать несколько корневых узлов из компонента
 
-However, in Vue 3, the performance of stateful components has improved to the point that the difference is negligible. In addition, stateful components now also include the ability to return multiple root nodes.
+Однако, во Vue 3 производительность компонентов с состоянием улучшилась до такой степени, что разница стала пренебрежительно мала. Кроме того, компоненты с состоянием теперь получили возможность возвращать несколько корневых узлов.
 
-As a result, the only remaining use case for functional components is simple components, such as a component to create a dynamic heading. Otherwise, it is recommended to use stateful components as you normally would.
+В результате, единственная оставшаяся причина для функциональных компонентов — простые компоненты, такие как компонент для создания динамического заголовка. В остальных случаях рекомендуется использовать компоненты с состоянием, как обычно.
 
 ## Синтаксис в 2.x
 
-Using the `<dynamic-heading>` component, which is responsible for rendering out the appropriate heading (i.e., `h1`, `h2`, `h3`, etc.), this could have been written as a single-file component in 2.x as:
+Компонент `<dynamic-heading>`, отвечающий за отрисовку соответствующего заголовка (т.е., `h1`, `h2`, `h3`, и т.д.), можно записать однофайловым компонентом в 2.x так:
 
-```js
-// Vue 2 Functional Component Example
+```vue
+<!-- Пример функционального компонента во Vue 2 -->
+<script>
 export default {
   functional: true,
   props: ['level'],
@@ -40,12 +41,13 @@ export default {
     return h(`h${props.level}`, data, children)
   }
 }
+</script>
 ```
 
-Or, for those who preferred the `<template>` in a single-file component:
+Или так, если предпочитаете использовать `<template>` в однофайловых компонентах:
 
 ```vue
-<!-- Vue 2 Functional Component Example with <template> -->
+<!-- Пример функционального компонента во Vue 2 с <template> -->
 <template functional>
   <component
     :is="`h${props.level}`"
@@ -63,15 +65,15 @@ export default {
 
 ## Синтаксис в 3.x
 
-### Components Created by Functions
+### Компоненты создаются функциями
 
-Now in Vue 3, all functional components are created with a plain function. In other words, there is no need to define the `{ functional: true }` component option.
+Теперь во Vue 3 все функциональные компоненты создаются с помощью простых функций. Другими словами, нет необходимости указывать опцию `{ functional: true }` компонента.
 
-They will receive two arguments: `props` and `context`. The `context` argument is an object that contains a component's `attrs`, `slots`, and `emit` properties.
+Функции получают два аргумента: `props` и `context`. Аргумент `context` — объект, в котором содержатся свойства компонента `attrs`, `slots` и `emit`.
 
-In addition, rather than implicitly provide `h` in a `render` function, `h` is now imported globally.
+Кроме того, вместо неявной передачи `h` в функцию `render`, теперь `h` импортируется глобально.
 
-Using the previously mentioned example of a `<dynamic-heading>` component, here is how it looks now.
+Приведённый выше пример компонента `<dynamic-heading>` теперь можно переписать так:
 
 ```js
 import { h } from 'vue'
@@ -85,11 +87,11 @@ DynamicHeading.props = ['level']
 export default DynamicHeading
 ```
 
-### Single File Components (SFCs)
+### Однофайловые компоненты (SFC)
 
-In 3.x, the performance difference between stateful and functional components has been drastically reduced and will be insignificant in most use cases. As a result, the migration path for developers using `functional` on SFCs is to remove the attribute and rename all references of `props` to `$props` and `attrs` to `$attrs`.
+В версиях 3.x разница производительности между функциональными компонентами и компонентами с состоянием была кардинально уменьшена и теперь будет незначительной в большинстве случаев использования. В результате, стратегия миграции для разработчиков, использующих `functional` в однофайловых компонентах будет заключаться в удалении этого атрибута и переименовании всех ссылок `props` в `$props` и `attrs` в `$attrs`.
 
-Using our `<dynamic-heading>` example from before, here is how it would look now.
+Используя компонент `<dynamic-heading>` из примера выше, в итоге он будет выглядеть так:
 
 ```vue{1,3,4}
 <template>
@@ -106,15 +108,15 @@ export default {
 </script>
 ```
 
-The main differences are that:
+Ключевые отличия в том, что:
 
-1. `functional` attribute removed on `<template>`
-1. `listeners` are now passed as part of `$attrs` and can be removed
+1. Из `<template>` удалён атрибут `functional`
+2. Теперь `listeners` передаются как часть `$attrs` и могут быть удалены
 
 ## Дальнейшие шаги
 
-For more information on the usage of the new functional components and the changes to render functions in general, see:
+Более подробную информацию об использовании новых функциональных компонентов, а также изменениях, вносимых в render-функции можно прочитать здесь:
 
-- [Migration: Render Functions](./render-function-api.html)
-- [Guide: Render Functions](https://ru.vuejs.org/guide/extras/render-function.html#render-functions-jsx)
+- [Руководство по миграции: изменён API render-функций](./render-function-api.html)
+- [Руководство: Render-функции](https://ru.vuejs.org/guide/extras/render-function.html#render-functions-jsx)
 - [Флаг сборки для миграции: `COMPONENT_FUNCTIONAL`](../migration-build.html#compat-configuration)
