@@ -17,21 +17,21 @@ While it looks like a lot has changed, a lot of what you know and love about Vue
 - [`key` usage on `<template v-for>` and non-`v-for` nodes has changed](./key-attribute.html)
 - [`v-if` and `v-for` precedence when used on the same element has changed](./v-if-v-for.html)
 - [`v-bind="object"` is now order-sensitive](./v-bind.html)
-- [`v-on:event.native` modifier has been removed](./v-on-native-modifier-removed.md)
+- [`v-on:event.native` modifier has been removed](./v-on-native-modifier-removed.html)
 
 ### Components
 
 - [Functional components can only be created using a plain function](./functional-components.html)
 - [`functional` attribute on single-file component (SFC) `<template>` and `functional` component option are deprecated](./functional-components.html)
 - [Async components now require `defineAsyncComponent` method to be created](./async-components.html)
-- [Component events should now be declared with the `emits` option](./emits-option.md)
+- [Component events should now be declared with the `emits` option](./emits-option.html)
 
 ### Render Function
 
 - [Render function API changed](./render-function-api.html)
 - [`$scopedSlots` property is removed and all slots are exposed via `$slots` as functions](./slots-unification.html)
 - [`$listeners` has been removed / merged into `$attrs`](./listeners-removed)
-- [`$attrs` now includes `class` and `style` attributes](./attrs-includes-class-style.md)
+- [`$attrs` now includes `class` and `style` attributes](./attrs-includes-class-style.html)
 
 ### Custom Elements
 
