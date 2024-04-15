@@ -48,7 +48,7 @@ badges:
 
 Теперь намного понятнее, в чём заключается разница между этими состояниями.
 
-![Transition Diagram](/images/transitions.svg)
+![Диаграмма переходов](/images/transitions.svg)
 
 Входные параметры компонента `<transition>`, связанные с этим, также изменились:
 
@@ -63,5 +63,5 @@ badges:
 
 ## См. также
 
-- [`<Transition>` как корневой элемент, больше не может быть переключен извне](./transition-as-root.html)
-- [`<TransitionGroup>` теперь не имеет корневого элемента по умолчанию](./transition-group.html)
+- [Использование `<transition>` корневым элементом](./transition-as-root.html)
+- [`<transition-group>` теперь не имеет корневого элемента по умолчанию](./transition-group.html)

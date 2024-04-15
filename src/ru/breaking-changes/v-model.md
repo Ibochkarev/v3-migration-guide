@@ -9,7 +9,7 @@ badges:
 
 Краткий обзор что изменилось:
 
-- **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ:** При использовании на компонентах v-model поменялись входной параметр и имя события:
+- **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ:** При использовании на компонентах `v-model` поменялись входной параметр и имя события:
   - входной параметр: `value` -> `modelValue`;
   - событие: `input` -> `update:modelValue`;
 - **КАРДИНАЛЬНОЕ ИЗМЕНЕНИЕ:** Модификатор `.sync` для `v-bind` и опция компонента `model` были удалены и заменяются возможностью указать аргумент `v-model`;
@@ -22,7 +22,7 @@ badges:
 
 Во Vue 2.0 директива `v-model` требовала, чтобы использовался входной параметр `value`. Для управления ещё другим входным параметром приходилось использовать `v-bind.sync`. Кроме того, жёстко прописанная связь между `v-model` и `value` приводила к проблемам при обработке нативных и пользовательских элементов.
 
-В версии 2.2 была добавлена опция компонента model, которая позволила настраивать входной параметр и событие, используемые для `v-model`. Но использовать можно было всё равно только одну `v-model` на компоненте.
+В версии 2.2 была добавлена опция компонента `model`, которая позволила настраивать входной параметр и событие, используемые для `v-model`. Но использовать можно было всё равно только одну `v-model` на компоненте.
 
 Во Vue 3 было унифицировано API для двусторонней привязки данных, чтобы уменьшить путаницу и предоставить разработчикам больше гибкости в работе с директивой `v-model`.
 
@@ -60,7 +60,7 @@ export default {
     // теперь используем входной параметр `title` вместо `value`
     title: {
       type: String,
-      default: 'Default title'
+      default: 'Заголовок по умолчанию'
     }
   }
 }
@@ -99,7 +99,7 @@ this.$emit('update:title', newValue)
 ```html
 <ChildComponent v-model="pageTitle" />
 
-<!-- будет сокращённой версией для: -->
+<!-- будет сокращённой версия для: -->
 
 <ChildComponent
   :modelValue="pageTitle"
@@ -119,12 +119,15 @@ this.$emit('update:title', newValue)
 <ChildComponent :title="pageTitle" @update:title="pageTitle = $event" />
 ```
 
-![v-bind anatomy](/images/v-bind-instead-of-sync.png)
+![Анатомия v-bind](/images/v-bind-instead-of-sync.png)
 
 Это также служит заменой модификатору `.sync` и позволяет указать несколько `v-model` на пользовательском компоненте.
 
 ```html
-<ChildComponent v-model:title="pageTitle" v-model:content="pageContent" />
+<ChildComponent
+  v-model:title="pageTitle"
+  v-model:content="pageContent"
+/>
 
 <!-- будет сокращённой версией для: -->
 
@@ -182,7 +185,7 @@ this.$emit('update:title', newValue)
   }
   ```
 
-[Флаг миграционной сборки:](../migration-build.html#compat-configuration)
+[Флаги сборки для миграции:](../migration-build.html#compat-configuration)
 
 - `COMPONENT_V_MODEL`
 - `COMPILER_V_BIND_SYNC`

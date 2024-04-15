@@ -7,9 +7,9 @@ badges:
 
 ## Обзор
 
-Использование `<transition>` в качестве корневого элемента компонента больше не будет вызывать анимации перехода, когда отображение компонента переключается снаружи
+Использование `<transition>` в качестве корневого элемента компонента больше не будет вызывать анимации перехода, когда отображение компонента переключается снаружи.
 
-## 2.x Поведение
+## Поведение в 2.x
 
 Во Vue 2 можно запускать анимации перехода снаружи компонента, используя `<transition>` в качестве корневого элемента компонента:
 
@@ -17,7 +17,9 @@ badges:
 <!-- компонент модального окна -->
 <template>
   <transition>
-    <div class="modal"><slot/></div>
+    <div class="modal">
+      <slot/>
+    </div>
   </transition>
 </template>
 ```
@@ -38,11 +40,15 @@ badges:
 Аналогичного эффекта можно добиться с помощью передачи входного параметра компоненту:
 
 ```vue
+<!-- компонент модального окна -->
 <template>
   <transition>
-    <div v-if="show" class="modal"><slot/></div>
+    <div v-if="show" class="modal">
+      <slot/>
+    </div>
   </transition>
 </template>
+
 <script>
 export default {
   props: ['show']
@@ -52,10 +58,10 @@ export default {
 
 ```html
 <!-- использование -->
-<modal :show="showModal">hello</modal>
+<modal :show="showModal">привет</modal>
 ```
 
 ## См. также
 
-- [Переименованы некоторые классы `<transition>`](./transition.html)
-- [`<TransitionGroup>` теперь не имеет корневого элемента по умолчанию](./transition-group.html)
+- [Переименованы некоторые классы transition](./transition.html)
+- [`<transition-group>` теперь не имеет корневого элемента по умолчанию](./transition-group.html)
