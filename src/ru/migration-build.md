@@ -325,7 +325,6 @@ export default {
 | OPTIONS_BEFORE_DESTROY       | ✔   | `beforeDestroy` -> `beforeUnmount`                                               |                                                                                    |
 | OPTIONS_DESTROYED            | ✔   | `destroyed` -> `unmounted`                                                       |                                                                                    |
 | WATCH_ARRAY                  | ✔   | Отслеживание массива больше не срабатывает при мутации без deep                  | [ссылка](./breaking-changes/watch.html)                                                                 |
-| V_FOR_REF                    | ✔   | `ref` внутри `v-for` не регистрирует массив refs                                 | [ссылка](./breaking-changes/array-refs.html)                                                            |
 | V_ON_KEYCODE_MODIFIER        | ✔   | `v-on` больше не поддерживает модификаторы keyCode                               | [ссылка](./breaking-changes/keycode-modifiers.html)                                                     |
 | CUSTOM_DIR                   | ✔   | Имена хуков пользовательских директив изменены                                   | [ссылка](./breaking-changes/custom-directives.html)                                                     |
 | ATTR_FALSE_VALUE             | ✔   | Атрибут больше не удаляется при привязке булево значения `false`                 | [ссылка](./breaking-changes/attribute-coercion.html)                                                    |
